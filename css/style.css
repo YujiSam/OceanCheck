@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+:root {
+    --base-color: #004d99;
+    --hover-color: #003366;
+    --text-color: #fff;
+}
+
 /* Estilos gerais */
 
 body {
@@ -23,7 +29,7 @@ body {
 }
 
 header {
-    background-color: #004d99; /* Cor de destaque para o cabeçalho */
+    background-color: var(--base-color); /* Cor de destaque para o cabeçalho */
     padding: 10px 0;
 }
 
@@ -39,14 +45,14 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: var(--text-color);
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 10px; /* Bordas arredondadas */
 }
 
 nav ul li a:hover {
-    background-color: #003366; /* Cor de destaque mais escura ao passar o mouse */
+    background-color: var(--hover-color); /* Cor de destaque mais escura ao passar o mouse */
     border-radius: 10px; /* Bordas arredondadas */
 }
 
@@ -56,7 +62,7 @@ section {
     margin-bottom: 35px;
     opacity: 0; /* Inicia cada seção com opacidade 0 */
     transition: opacity 0.5s ease-in-out; /* Transição suave para o fade-in */
-    border: 2px solid #004d99; /* Adiciona uma borda sólida */
+    border: 2px solid var(--base-color); /* Adiciona uma borda sólida */
     border-radius: 10px; /* Bordas arredondadas */
     padding: 10px; /* Espaçamento interno */
 }
