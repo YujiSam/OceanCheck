@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Exibe um alerta de boas-vindas ao usuário
     Swal.fire({
         icon: 'success',
-        title: 'Bem-vindo ao Monitoramento Marinho!',
+        title: 'Bem-vindo a Solução OceanCheck!',
         text: 'Estamos felizes em tê-lo aqui.',
         showConfirmButton: false, // Não exibe o botão de confirmação
         timer: 3000 // Fecha automaticamente após 3 segundos
