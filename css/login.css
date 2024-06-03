@@ -2,118 +2,131 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Garante que o padding e a borda sejam incluídos nas medidas do elemento */
 }
 
+/* Variáveis CSS para cores principais */
 :root {
-    --base-color: #004d99;
-    --hover-color: #003366;
-    --text-color: #fff;
+    --base-color: #004d99; /* Cor base principal */
+    --hover-color: #003366; /* Cor de destaque ao passar o mouse */
+    --text-color: #fff; /* Cor do texto */
 }
 
+/* Estilos gerais para o corpo */
 body {
-    font-family: "Bebas Neue", sans-serif;
+    font-family: "Bebas Neue", sans-serif; /* Fonte principal */
     font-weight: 400;
     font-style: normal;
     background-color: var(--hover-color); /* Cor de fundo suave */
-    font-size: larger;
-} 
+    font-size: larger; /* Tamanho da fonte */
+}
 
+/* Container principal para centralizar o conteúdo */
 .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Altura de 100% da viewport */
 }
 
+/* Estilos para o container do formulário */
 .form-container {
-    background-color: var(--base-color);
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px;
-    width: 300px;
+    background-color: var(--base-color); /* Cor de fundo do formulário */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra ao redor do formulário */
+    padding: 20px; /* Espaçamento interno */
+    margin: 20px; /* Espaçamento externo */
+    width: 300px; /* Largura do formulário */
 }
 
+/* Estilos para o título */
 h2 {
-    color: var(--text-color);
-    margin-bottom: 20px;
+    color: var(--text-color); /* Cor do texto */
+    margin-bottom: 20px; /* Espaçamento inferior */
 }
 
+/* Grupo de formulário com espaçamento entre campos */
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 15px; /* Espaçamento inferior entre grupos de formulário */
 }
 
+/* Estilos para os rótulos */
 label {
-    color: var(--text-color);
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
+    color: var(--text-color); /* Cor do texto */
+    display: block; /* Exibição em bloco */
+    font-weight: bold; /* Negrito */
+    margin-bottom: 5px; /* Espaçamento inferior */
 }
 
+/* Estilos para campos de entrada */
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    width: 100%; /* Largura total do container pai */
+    padding: 10px; /* Espaçamento interno */
+    border-radius: 4px; /* Bordas arredondadas */
+    border: 1px solid #ccc; /* Borda cinza clara */
 }
 
+/* Estilos para o botão de submit */
 button[type="submit"] {
-    font-family: "Bebas Neue", sans-serif; 
-    background-color: var(--hover-color);
-    color: var(--text-color);
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    cursor: pointer;
+    font-family: "Bebas Neue", sans-serif; /* Fonte principal */
+    background-color: var(--hover-color); /* Cor de fundo */
+    color: var(--text-color); /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 4px; /* Bordas arredondadas */
+    padding: 10px 20px; /* Espaçamento interno */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
 }
 
+/* Estilos ao passar o mouse no botão de submit */
 button[type="submit"]:hover {
-    background-color: #003366;
+    background-color: #003366; /* Cor de fundo ao passar o mouse */
 }
 
+/* Estilos para botões de alternância */
 #toggle-btn,
 #toggle-btn-login {
-    background-color: var(--base-color);
-    color: var(--text-color);
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 20px;
-    font-family: "Bebas Neue", sans-serif; 
+    background-color: var(--base-color); /* Cor de fundo */
+    color: var(--text-color); /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 4px; /* Bordas arredondadas */
+    padding: 10px 20px; /* Espaçamento interno */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    margin-top: 20px; /* Espaçamento superior */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    font-size: 20px; /* Tamanho da fonte */
+    font-family: "Bebas Neue", sans-serif; /* Fonte principal */
 }
 
-
+/* Estilos ao passar o mouse nos botões de alternância */
 #toggle-btn:hover {
-    background-color: var(--hover-color);
+    background-color: var(--hover-color); /* Cor de fundo ao passar o mouse */
 }
 
 #toggle-btn-login:hover {
-    background-color: var(--hover-color);
+    background-color: var(--hover-color); /* Cor de fundo ao passar o mouse */
 }
 
+/* Estilos para o botão de voltar */
 #back-btn {
-    background-color: var(--base-color);
-    color: var(--text-color);
-    text-decoration: none;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    font-size: 20px;
+    background-color: var(--base-color); /* Cor de fundo */
+    color: var(--text-color); /* Cor do texto */
+    text-decoration: none; /* Sem sublinhado */
+    border: none; /* Sem borda */
+    border-radius: 4px; /* Bordas arredondadas */
+    padding: 10px 20px; /* Espaçamento interno */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    font-size: 20px; /* Tamanho da fonte */
 }
 
+/* Estilos ao passar o mouse no botão de voltar */
 #back-btn:hover {
-    background-color: var(--hover-color);
+    background-color: var(--hover-color); /* Cor de fundo ao passar o mouse */
 }
 
+/* Classe para esconder elementos */
 .hidden {
-    display: none;
+    display: none; /* Elementos com esta classe não são exibidos */
 }
-

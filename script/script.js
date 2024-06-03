@@ -1,62 +1,66 @@
+// Aguarda o carregamento completo do DOM antes de executar o código
 document.addEventListener("DOMContentLoaded", function() {
-  // Efeito de transição para as seções da página
-  let sections = document.querySelectorAll("section");
+    // Seleciona todas as seções da página para aplicar o efeito de transição
+    let sections = document.querySelectorAll("section");
 
-  function checkPosition() {
-      for (let section of sections) {
-          let position = section.getBoundingClientRect().top;
-          let screenHeight = window.innerHeight;
+    // Função para verificar a posição das seções na tela
+    function checkPosition() {
+        for (let section of sections) {
+            // Obtém a posição superior da seção em relação à viewport
+            let position = section.getBoundingClientRect().top;
+            let screenHeight = window.innerHeight;
 
-          if (position < screenHeight * 0.75) {
-              section.classList.add("visible");
-          }
-      }
-  }
+            // Adiciona a classe 'visible' se a seção estiver a 75% da altura da tela
+            if (position < screenHeight * 0.75) {
+                section.classList.add("visible");
+            }
+        }
+    }
 
-  window.addEventListener("scroll", checkPosition);
-  window.addEventListener("resize", checkPosition);
+    // Adiciona eventos de scroll e resize para verificar a posição das seções
+    window.addEventListener("scroll", checkPosition);
+    window.addEventListener("resize", checkPosition);
 
-  checkPosition();
+    // Verifica a posição das seções inicialmente
+    checkPosition();
 
-  // Alerta de boas-vindas
-  Swal.fire({
-      icon: 'success',
-      title: 'Bem-vindo ao Monitoramento Marinho!',
-      text: 'Estamos felizes em tê-lo aqui.',
-      showConfirmButton: false,
-      timer: 3000 // O alerta será fechado automaticamente após 3 segundos
-  }).then((result) => {
-      // Após o alerta de boas-vindas, exibe o alerta de login
-      if (result.dismiss === Swal.DismissReason.timer) {
-          showLoginAlert();
-      }
-  });
+    // Exibe um alerta de boas-vindas ao usuário
+    Swal.fire({
+        icon: 'success',
+        title: 'Bem-vindo ao Monitoramento Marinho!',
+        text: 'Estamos felizes em tê-lo aqui.',
+        showConfirmButton: false, // Não exibe o botão de confirmação
+        timer: 3000 // Fecha automaticamente após 3 segundos
+    }).then((result) => {
+        // Após o alerta de boas-vindas, exibe o alerta de login
+        if (result.dismiss === Swal.DismissReason.timer) {
+            showLoginAlert(); // Chama a função para mostrar o alerta de login
+        }
+    });
 });
 
+// Função para exibir o alerta de login
 function showLoginAlert() {
-  // Verificar se o cookie "cadastro_feito" está presente
-  if (document.cookie.includes("cadastro_feito=true")) {
-      // Remover o cookie após verificação
-      document.cookie = "cadastro_feito=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-      return; // Não mostrar o alerta de login
-  }
+    // Verifica se o cookie "cadastro_feito" está presente
+    if (document.cookie.includes("cadastro_feito=true")) {
+        // Remove o cookie após verificação
+        document.cookie = "cadastro_feito=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        return; // Não mostra o alerta de login se o cookie estiver presente
+    }
 
-  // Alerta de login
-  Swal.fire({
-      icon: 'info',
-      title: 'Faça o Login para Continuar',
-      html:
-          '<input id="swal-input1" class="swal2-input" placeholder="Nome de usuário">' +
-          '<input type="password" id="swal-input2" class="swal2-input" placeholder="Senha">',
-      focusConfirm: false,
-      footer: '<a href="login.html">Não há cadastro? Faça aqui</a>',
-      preConfirm: () => {
-          const username = Swal.getPopup().querySelector('#swal-input1').value;
-          const password = Swal.getPopup().querySelector('#swal-input2').value;
-          // Aqui você pode adicionar a lógica para verificar o login
-          // Por exemplo, enviar os dados para o servidor e verificar a resposta
-          // Se o login for válido, você pode redirecionar o usuário para a próxima página
-      }
-  });
+    // Exibe um alerta de login ao usuário
+    Swal.fire({
+        icon: 'info',
+        title: 'Faça o Login para Continuar',
+        html:
+            '<input id="swal-input1" class="swal2-input" placeholder="Nome de usuário">' +
+            '<input type="password" id="swal-input2" class="swal2-input" placeholder="Senha">',
+        focusConfirm: false, // Não foca no botão de confirmação automaticamente
+        footer: '<a href="login.html">Não há cadastro? Faça aqui</a>', // Link para cadastro
+        preConfirm: () => {
+            // Captura os valores dos campos de entrada
+            const username = Swal.getPopup().querySelector('#swal-input1').value;
+            const password = Swal.getPopup().querySelector('#swal-input2').value;
+        }
+    });
 }
-

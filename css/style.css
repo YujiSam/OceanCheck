@@ -5,40 +5,42 @@
     box-sizing: border-box;
 }
 
+/* Variáveis CSS para cores principais */
 :root {
-    --base-color: #004d99;
-    --hover-color: #003366;
-    --text-color: #fff;
+    --base-color: #004d99; /* Cor base principal */
+    --hover-color: #003366; /* Cor de destaque ao passar o mouse */
+    --text-color: #fff; /* Cor do texto */
 }
 
-/* Estilos gerais */
-
+/* Estilos gerais para o corpo */
 body {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
     background-color: #f8f8f8; /* Cor de fundo suave */
     color: black; /* Cor do texto */
-    font-size: larger;
+    font-size: larger; /* Tamanho da fonte */
 }
 
+/* Estilos para o carrossel */
 .carrosel {
     position: relative;
     max-width: 100%;
-    overflow: hidden;
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa a área do carrossel */
 }
-  
+
 .carrosel-container {
     display: flex;
-    transition: transform 0.5s ease;
-    margin-right: -20px;
+    transition: transform 0.5s ease; /* Transição suave ao mover o carrossel */
+    margin-right: -20px; /* Ajuste de margem */
 } 
 
 .carrosel img {
-    width: 80px; 
-    margin-right: 20px; 
+    width: 80px; /* Largura das imagens do carrossel */
+    margin-right: 20px; /* Espaçamento entre imagens */
 }
 
+/* Botões de navegação do carrossel */
 .prev-btn,
 .next-btn {
     position: absolute;
@@ -46,102 +48,147 @@ body {
     transform: translateY(-50%);
     background: none;
     border: none;
-    font-size: 60px;
-    color: var(--base-color);
-    cursor: pointer;
+    font-size: 60px; /* Tamanho da fonte dos botões */
+    color: var(--base-color); /* Cor dos botões */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
 }
   
 .prev-btn {
-    left: 10px;
+    left: 10px; /* Botão anterior à esquerda */
 }
   
 .next-btn {
-    right: 10px;
+    right: 10px; /* Botão próximo à direita */
 }
 
+/* Estilos para o container principal */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 15px;
+    max-width: 800px; /* Largura máxima do container */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 15px; /* Espaçamento interno */
 }
 
+/* Estilos para o cabeçalho */
 header {
-    background-color: var(--base-color); /* Cor de destaque para o cabeçalho */
-    padding: 10px 0;
+    background-color: var(--base-color); /* Cor de fundo do cabeçalho */
+    padding: 10px 0; /* Espaçamento interno */
 }
 
+/* Estilos para a navegação */
 nav ul {
-    list-style-type: none;
+    list-style-type: none; /* Remove marcadores da lista */
     margin: 0;
     padding: 0;
-    text-align: center;
+    text-align: center; /* Centraliza os itens */
 }
 
 nav ul li {
-    display: inline;
+    display: inline; /* Exibe os itens em linha */
 }
 
 nav ul li a {
-    color: var(--text-color);
+    color: var(--text-color); /* Cor do texto dos links */
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 10px 20px; /* Espaçamento interno dos links */
     border-radius: 10px; /* Bordas arredondadas */
 }
 
 nav ul li a:hover {
-    background-color: var(--hover-color); /* Cor de destaque mais escura ao passar o mouse */
+    background-color: var(--hover-color); /* Cor de fundo ao passar o mouse */
     border-radius: 10px; /* Bordas arredondadas */
 }
 
 /* Estilos para cada seção */
-
 section {
-    margin-bottom: 35px;
-    opacity: 0; /* Inicia cada seção com opacidade 0 */
-    transition: opacity 0.5s ease-in-out; /* Transição suave para o fade-in */
-    border: 2px solid var(--base-color); /* Adiciona uma borda sólida */
+    margin-bottom: 35px; /* Espaçamento inferior */
+    opacity: 0; /* Inicia com opacidade 0 para fade-in */
+    transition: opacity 0.5s ease-in-out; /* Transição suave para fade-in */
+    border: 2px solid var(--base-color); /* Borda sólida */
     padding: 10px; /* Espaçamento interno */
 }
 
-section img{
+section img {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
-    min-width: 900px;
-    min-height: 600px;
-    max-width: 900px;
-    max-height: 600px;
+    border-radius: 5px; /* Bordas arredondadas */
+    min-width: 900px; /* Largura mínima das imagens */
+    min-height: 600px; /* Altura mínima das imagens */
+    max-width: 900px; /* Largura máxima das imagens */
+    max-height: 600px; /* Altura máxima das imagens */
 }
 
+/* Classe para tornar a seção visível */
 section.visible {
-    opacity: 1; /* Altera a opacidade para 1 após o carregamento */
-    animation: fadeInAnimation 0.5s ease-in-out forwards; /* Adiciona a animação de fade-in */
+    opacity: 1; /* Altera a opacidade para 1 */
+    animation: fadeInAnimation 0.5s ease-in-out forwards; /* Animação de fade-in */
 }
 
 @keyframes fadeInAnimation {
     from {
-        opacity: 0;
+        opacity: 0; /* Opacidade inicial */
     }
     to {
-        opacity: 1;
+        opacity: 1; /* Opacidade final */
     }
 }
 
+/* Estilos para os títulos */
 h2 {
     color: #004d99; /* Cor de destaque para títulos */
 }
 
+/* Estilos para os parágrafos */
 p {
-    line-height: 1.5;
+    line-height: 1.5; /* Altura da linha */
 }
 
 /* Estilos para o rodapé */
-
 footer {
-    background-color: #004d99;
-    color: #fff;
-    font-size: 20px;
-    text-align: center;
-    padding: 20px 0;
+    background-color: #004d99; /* Cor de fundo do rodapé */
+    color: #fff; /* Cor do texto */
+    font-size: 20px; /* Tamanho da fonte */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px 0; /* Espaçamento interno */
+}
+
+/* Breakpoint para dispositivos móveis */
+@media (max-width: 600px) {
+    body {
+        font-size: medium; /* Reduz o tamanho da fonte */
+    }
+    
+    .carrosel img {
+        width: 50px; /* Reduz a largura das imagens no carrossel */
+        margin-right: 10px; /* Reduz o espaçamento entre imagens */
+    }
+
+    .prev-btn,
+    .next-btn {
+        font-size: 40px; /* Reduz o tamanho dos botões do carrossel */
+    }
+
+    nav ul li {
+        display: block; /* Torna os itens do menu em blocos */
+        margin-bottom: 10px; /* Adiciona espaço entre os itens do menu */
+    }
+
+    nav ul li a {
+        padding: 10px; /* Reduz o preenchimento dos links de navegação */
+    }
+
+    section img {
+        min-width: 100%; /* Imagens responsivas para seções */
+        max-width: 100%;
+        height: auto;
+    }
+
+    .container {
+        padding: 10px; /* Reduz o preenchimento do container */
+    }
+
+    footer {
+        font-size: 16px; /* Reduz o tamanho da fonte do rodapé */
+        padding: 15px 0; /* Reduz o espaçamento interno do rodapé */
+    }
 }
