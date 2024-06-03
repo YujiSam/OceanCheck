@@ -22,6 +22,43 @@ body {
     font-size: larger;
 }
 
+.carrosel {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+  
+.carrosel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    margin-right: -20px;
+} 
+
+.carrosel img {
+    width: 80px; 
+    margin-right: 20px; 
+}
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 60px;
+    color: var(--base-color);
+    cursor: pointer;
+}
+  
+.prev-btn {
+    left: 10px;
+}
+  
+.next-btn {
+    right: 10px;
+}
+
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -63,7 +100,6 @@ section {
     opacity: 0; /* Inicia cada seção com opacidade 0 */
     transition: opacity 0.5s ease-in-out; /* Transição suave para o fade-in */
     border: 2px solid var(--base-color); /* Adiciona uma borda sólida */
-    border-radius: 10px; /* Bordas arredondadas */
     padding: 10px; /* Espaçamento interno */
 }
 

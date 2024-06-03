@@ -16,14 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     toggleBtnLogin.addEventListener("click", function() {
-        signupFormContainer.classList.toggle("hidden");
-        loginFormContainer.classList.toggle("hidden");
-
-        if (toggleBtnLogin.textContent === "Alternar para Cadastro") {
-            toggleBtnLogin.textContent = "Alternar para Login";
-        } else {
-            toggleBtnLogin.textContent = "Alternar para Cadastro";
-        }
+        const username = document.getElementById("login-username").value;
+        const password = document.getElementById("login-password").value;
     });
 
     // Após o cadastro bem-sucedido
