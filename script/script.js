@@ -34,6 +34,13 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function showLoginAlert() {
+  // Verificar se o cookie "cadastro_feito" está presente
+  if (document.cookie.includes("cadastro_feito=true")) {
+      // Remover o cookie após verificação
+      document.cookie = "cadastro_feito=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      return; // Não mostrar o alerta de login
+  }
+
   // Alerta de login
   Swal.fire({
       icon: 'info',
@@ -52,3 +59,4 @@ function showLoginAlert() {
       }
   });
 }
+

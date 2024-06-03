@@ -25,4 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
             toggleBtnLogin.textContent = "Alternar para Cadastro";
         }
     });
+
+    // Após o cadastro bem-sucedido
+    document.cookie = "cadastro_feito=true; path=/";
 });
