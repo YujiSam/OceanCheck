@@ -71,6 +71,7 @@ section img{
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 5px;
     min-width: 900px;
     min-height: 600px;
     max-width: 900px;
